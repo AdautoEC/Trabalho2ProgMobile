@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_nav">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/inicialFragment">
 
+    <fragment
+        android:id="@+id/inicialFragment"
+        android:name="com.example.trabalho2progmobile.aplicação.inicial.InicialFragment"
+        android:label="inicial_fragment"
+        tools:layout="@layout/inicial_fragment" />
 </navigation>
