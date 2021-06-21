@@ -94,16 +94,18 @@
             tools:layout_editor_absoluteX="6dp" />
 
         <Button
-            android:id="@+id/btn_cadastrar"
-            android:layout_width="399dp"
+            android:id="@+id/btn_logar"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="@color/preto"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
             android:text="CADASTRAR"
             android:textColor="@color/branco"
-            app:layout_constraintTop_toBottomOf="@+id/input_confirm_password"
-            tools:layout_editor_absoluteX="6dp" />
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_confirm_password" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
