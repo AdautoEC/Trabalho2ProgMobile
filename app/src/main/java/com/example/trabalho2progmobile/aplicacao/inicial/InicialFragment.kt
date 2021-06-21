@@ -1,20 +1,18 @@
 package com.example.trabalho2progmobile.aplicacao.inicial
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.trabalho2progmobile.R
+import kotlinx.android.synthetic.main.inicial_fragment.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class InicialFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = InicialFragment()
-    }
-
-    private lateinit var viewModel: InicialViewModel
+    private val _viewModel: InicialViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,8 +23,22 @@ class InicialFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(InicialViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        setupUi()
+    }
+
+    private fun setupUi(){
+        btnLogin.setOnClickListener {
+            val navController = findNavController()
+            val action = InicialFragmentDirections.actionInicialFragmentToLoginFragment()
+            navController.navigate(action)
+        }
+
+        btnRegistrar.setOnClickListener {
+            val navController = findNavController()
+            val action = InicialFragmentDirections.actionInicialFragmentToCadastrarFragment()
+            navController.navigate(action)
+        }
     }
 
 }
