@@ -7,11 +7,12 @@
     tools:context=".aplicacao.MainActivity"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/corPrincipal">
+        android:background="@color/corPrincipal"
+        app:titleTextColor="@color/branco">
     </androidx.appcompat.widget.Toolbar>
 
     <fragment
