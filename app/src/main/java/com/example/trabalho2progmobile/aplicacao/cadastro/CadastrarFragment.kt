@@ -1,20 +1,16 @@
 package com.example.trabalho2progmobile.aplicacao.cadastro
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.trabalho2progmobile.R
+import com.example.trabalho2progmobile.utils.BaseFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class CadastrarFragment : Fragment() {
+class CadastrarFragment: BaseFragment() {
 
-    companion object {
-        fun newInstance() = CadastrarFragment()
-    }
-
-    private lateinit var viewModel: CadastrarViewModel
+    private val _viewModel: CadastrarViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,8 +21,7 @@ class CadastrarFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(CadastrarViewModel::class.java)
-        // TODO: Use the ViewModel
+
     }
 
 }
