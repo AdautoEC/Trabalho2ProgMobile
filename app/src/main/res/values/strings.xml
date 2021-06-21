@@ -3,4 +3,8 @@
     <string name="digite_o_nome">Digite o Nome</string>
     <string name="registrar">Registrar</string>
     <string name="login">Login</string>
+    <string name="email">E-mail</string>
+    <string name="nome_completo">Nome Completo</string>
+    <string name="pass">Senha</string>
+    <string name="confirm_pass">Confirmar senha</string>
 </resources>
