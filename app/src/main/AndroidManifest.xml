@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Trabalho2ProgMobile">
-        <activity android:name=".aplicação.MainActivity">
+        <activity android:name=".aplicacao.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

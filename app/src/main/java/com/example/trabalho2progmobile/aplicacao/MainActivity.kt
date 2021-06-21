@@ -1,4 +1,4 @@
- package com.example.trabalho2progmobile.aplicação
+ package com.example.trabalho2progmobile.aplicacao
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
