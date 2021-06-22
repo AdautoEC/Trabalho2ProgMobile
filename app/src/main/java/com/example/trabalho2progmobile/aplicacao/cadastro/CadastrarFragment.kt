@@ -1,6 +1,10 @@
 package com.example.trabalho2progmobile.aplicacao.cadastro
 
+import android.app.Activity
+import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +17,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CadastrarFragment: BaseFragment() {
 
+    private val REQUEST_CODE = 200
     private val _viewModel: CadastrarViewModel by viewModel()
 
     override fun onCreateView(
@@ -38,6 +43,9 @@ class CadastrarFragment: BaseFragment() {
                 input_confirm_password.text.toString()
             )
         }
+        imgViewFoto.setOnClickListener {
+            capturePhoto()
+        }
     }
 
     private fun subscribeUi(){
@@ -57,5 +65,17 @@ class CadastrarFragment: BaseFragment() {
 
     private fun mostrarErroDoMaskEditText(editText: TextInputEditText, erro: Int){
         editText.error = getString(erro)
+    }
+
+    private fun capturePhoto() {
+        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        startActivityForResult(cameraIntent, REQUEST_CODE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE && data != null){
+            imgViewFoto.setImageBitmap(data.extras!!.get("data") as Bitmap)
+        }
     }
 }

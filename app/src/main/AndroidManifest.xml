@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.trabalho2progmobile">
 
+    <uses-permission
+        android:name="android.permission.CAMERA"
+        android:required="true"/>
+    <uses-permission
+        android:name="android.hardware.camera.any"
+        android:required="true"/>
+    <uses-permission
+        android:name="android.hardware.camera.autofocus"
+        android:required="false"/>
+
     <application
         android:name=".utils.mvvm.Trabalho2ProgMobile"
         android:allowBackup="true"
