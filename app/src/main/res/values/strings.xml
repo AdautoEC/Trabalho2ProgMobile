@@ -3,6 +3,8 @@
 
     <!--  Nomes das telas  -->
     <string name="cadastrar">Cadastrar</string>
+    <string name="topicos">TÓPICOS</string>
+    <string name="editarPerfil">EDITAR PERFIL</string>
 
     <!--  Erros EditText  -->
     <string name="erro_nome_vazio">Nome não pode ser vazio</string>

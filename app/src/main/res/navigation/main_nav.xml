@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_inicialFragment_to_cadastrarFragment"
             app:destination="@id/cadastrarFragment" />
+        <action
+            android:id="@+id/action_inicialFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -27,4 +30,9 @@
         android:name="com.example.trabalho2progmobile.aplicacao.cadastro.CadastrarFragment"
         android:label="cadastrar_fragment"
         tools:layout="@layout/cadastrar_fragment" />
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.example.trabalho2progmobile.perfilFragment"
+        android:label="perfil_fragment"
+        tools:layout="@layout/perfil_fragment" />
 </navigation>
