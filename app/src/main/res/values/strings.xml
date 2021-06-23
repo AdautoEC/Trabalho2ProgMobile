@@ -10,6 +10,19 @@
     <string name="erro_senha_vazia">Senha não pode ser vazia</string>
     <string name="erro_confirmar_senha">Senhas precisam ser iguais</string>
 
+    <!-- Strings de Comando do Dialog -->
+    <string name="dialog_mostrar">mostrar</string>
+    <string name="dialog_atualizar">atualizar</string>
+    <string name="dialog_remover">remover</string>
+
+    <!-- Mensagens do Dialog -->
+    <string name="erro_dialog">Erro</string>
+    <string name="salvando_usuario">Salvando Usuário no Banco de Dados</string>
+    <string name="retorno">Retorno</string>
+    <string name="alerta">Alerta!</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="confirmar">Confirmar</string>
+
     <string name="digite_o_nome">Digite o Nome</string>
     <string name="registrar">Registrar</string>
     <string name="login">Login</string>
@@ -17,4 +30,6 @@
     <string name="nome_completo">Nome Completo</string>
     <string name="pass">Senha</string>
     <string name="confirm_pass">Confirmar senha</string>
+    <string name="usuario_inserido">Usuário Inserido com Sucesso!</string>
+
 </resources>

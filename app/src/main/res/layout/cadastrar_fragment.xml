@@ -6,117 +6,123 @@
     android:layout_height="match_parent"
     tools:context=".aplicacao.cadastro.CadastrarFragment">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="25dp"
-            android:layout_gravity="center"
-            app:strokeColor="@color/corPrincipal"
-            app:strokeWidth="10dp">
-
-            <ImageView
-                android:id="@+id/imgViewFoto"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:src="@drawable/ic_foto" />
-
-        </androidx.cardview.widget.CardView>
-
-
-
-        <com.google.android.material.textfield.TextInputLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp">
+            android:orientation="vertical"
+            android:gravity="top">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_nome_completo"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="25dp"
+                android:layout_gravity="center"
+                app:strokeColor="@color/corPrincipal"
+                app:strokeWidth="10dp">
+
+                <ImageView
+                    android:id="@+id/imgViewFoto"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/ic_foto" />
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/branco"
-                android:fitsSystemWindows="true"
-                android:gravity="center"
-                android:hint="@string/nome_completo"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_cadastrar" />
+                android:layout_margin="10dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_nome_completo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/branco"
+                    android:fitsSystemWindows="true"
+                    android:gravity="center"
+                    android:hint="@string/nome_completo"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_cadastrar" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_email"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/branco"
-                android:fitsSystemWindows="true"
-                android:gravity="center"
-                android:hint="@string/email"
-                android:inputType="textPersonName"
-                app:layout_constraintTop_toBottomOf="@+id/input_nome_completo"
-                tools:layout_editor_absoluteX="0dp" />
+                android:layout_margin="10dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/branco"
+                    android:fitsSystemWindows="true"
+                    android:gravity="center"
+                    android:hint="@string/email"
+                    android:inputType="textPersonName"
+                    app:layout_constraintTop_toBottomOf="@+id/input_nome_completo"
+                    tools:layout_editor_absoluteX="0dp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_password"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/branco"
-                android:fitsSystemWindows="true"
-                android:gravity="center"
-                android:hint="@string/pass"
-                android:inputType="textPersonName"
-                app:layout_constraintTop_toBottomOf="@+id/input_email"
-                tools:layout_editor_absoluteX="0dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="10dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/branco"
+                    android:fitsSystemWindows="true"
+                    android:gravity="center"
+                    android:hint="@string/pass"
+                    android:inputType="textPersonName"
+                    app:layout_constraintTop_toBottomOf="@+id/input_email"
+                    tools:layout_editor_absoluteX="0dp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_confirm_password"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/branco"
-                android:fitsSystemWindows="true"
-                android:gravity="center"
-                android:hint="@string/confirm_pass"
-                android:inputType="textPersonName"
-                app:layout_constraintTop_toBottomOf="@+id/input_password"
-                tools:layout_editor_absoluteX="6dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="10dp">
 
-        <Button
-            android:id="@+id/btn_cadastrar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="@string/cadastrar"
-            android:textColor="@color/branco"
-            android:background="@drawable/botao_redondo"
-            app:backgroundTint="@color/corPrincipal"
-            android:textStyle="bold"/>
-    </LinearLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/branco"
+                    android:fitsSystemWindows="true"
+                    android:gravity="center"
+                    android:hint="@string/confirm_pass"
+                    android:inputType="textPersonName"
+                    app:layout_constraintTop_toBottomOf="@+id/input_password"
+                    tools:layout_editor_absoluteX="6dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_cadastrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="@string/cadastrar"
+                android:textColor="@color/branco"
+                android:background="@drawable/botao_redondo"
+                app:backgroundTint="@color/corPrincipal"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

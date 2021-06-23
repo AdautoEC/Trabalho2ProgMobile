@@ -7,4 +7,5 @@
     <color name="corSecundariaVariante">#FF018786</color>
     <color name="preto">#FF000000</color>
     <color name="branco">#FFFFFFFF</color>
+    <color name="vermelhoErroDark">#d44747</color>
 </resources>

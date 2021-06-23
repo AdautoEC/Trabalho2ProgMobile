@@ -9,11 +9,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.trabalho2progmobile.R
+import com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario
+import com.example.trabalho2progmobile.utils.converters.Converters
 import com.example.trabalho2progmobile.utils.mvvm.BaseFragment
+import com.example.trabalho2progmobile.utils.retorno.Resultado
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.cadastrar_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import androidx.navigation.fragment.findNavController
 
 class CadastrarFragment: BaseFragment() {
 
@@ -60,6 +64,39 @@ class CadastrarFragment: BaseFragment() {
         }
         _viewModel.erroConfirmarSenha.observe(viewLifecycleOwner) {
             mostrarErroDoMaskEditText(input_confirm_password, it)
+        }
+        _viewModel.dadosCorretos.observe(viewLifecycleOwner) {
+            if(it)
+            _viewModel.inserirUsuarioNoBanco(
+                Usuario(
+                    0,
+                    input_nome_completo.text.toString(),
+                    input_email.text.toString(),
+                    input_password.text.toString(),
+                    Converters().drawableToBitmap(
+                        requireContext().getDrawable(R.drawable.ic_foto)!!
+                    )
+                )
+            )
+        }
+        _viewModel.usuarioInserido.observe(viewLifecycleOwner, ::processarResultado)
+    }
+
+    private fun processarResultado(
+        resultado: Resultado
+    ){
+        if(resultado.resultadoStatus == Resultado.ResultadoStatus.CARREGANDO){
+            opcoesDialog(R.string.dialog_mostrar, R.string.salvando_usuario)
+        }
+        else{
+            if(resultado.correto){
+                opcoesDialog(R.string.dialog_remover, R.string.salvando_usuario)
+                exibirMensagem(getString(R.string.usuario_inserido))
+                findNavController().popBackStack()
+            }
+            else{
+                opcoesDialog(R.string.dialog_remover, R.string.salvando_usuario)
+            }
         }
     }
 

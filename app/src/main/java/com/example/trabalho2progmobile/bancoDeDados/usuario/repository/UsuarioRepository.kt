@@ -10,9 +10,13 @@ import kotlinx.coroutines.runBlocking
 class UsuarioRepository(
     private val usuarioDao: UsuarioDao
 ): IUsuarioRepository{
-    override fun inserirUsuario(usuario: Usuario){
-        CoroutineScope(IO).launch {
+    override fun inserirUsuario(usuario: Usuario): Boolean = runBlocking{
+        return@runBlocking try {
             usuarioDao.inserirUsuario(usuario)
+            true
+        }
+        catch (e:Exception){
+            false
         }
     }
 
@@ -24,15 +28,23 @@ class UsuarioRepository(
         return@runBlocking usuarioDao.getUsuarioById(usuarioId)
     }
 
-    override fun atualizarUsuario(usuario: Usuario){
-        CoroutineScope(IO).launch {
+    override fun atualizarUsuario(usuario: Usuario): Boolean = runBlocking{
+        return@runBlocking try {
             usuarioDao.updateUsuario(usuario)
+            true
+        }
+        catch (e:Exception){
+             false
         }
     }
 
-    override fun deletarUsuario(usuario: Usuario){
-        CoroutineScope(IO).launch {
+    override fun deletarUsuario(usuario: Usuario): Boolean = runBlocking{
+        return@runBlocking try {
             usuarioDao.deleteUsuario(usuario)
+            true
+        }
+        catch (e:Exception){
+            false
         }
     }
 }
