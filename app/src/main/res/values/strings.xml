@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">Trabalho2ProgMobile</string>
+
+    <!--  Nomes das telas  -->
+    <string name="cadastrar">Cadastrar</string>
+
+    <!--  Erros EditText  -->
+    <string name="erro_nome_vazio">Nome não pode ser vazio</string>
+    <string name="erro_email_vazio">E-mail não pode ser vazio</string>
+    <string name="erro_senha_vazia">Senha não pode ser vazia</string>
+    <string name="erro_confirmar_senha">Senhas precisam ser iguais</string>
+
     <string name="digite_o_nome">Digite o Nome</string>
     <string name="registrar">Registrar</string>
     <string name="login">Login</string>

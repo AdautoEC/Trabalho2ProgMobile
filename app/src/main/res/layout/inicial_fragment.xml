@@ -3,22 +3,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".aplicacao.inicial.InicialFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".aplicacao.inicial.InicialFragment"
+    android:orientation="vertical">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textColor="@color/preto"
-        android:text="@string/login" />
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp">
 
-    <Button
-        android:id="@+id/btnRegistrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/registrar"
-        android:textColor="@color/preto"/>
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/botao_redondo"
+            android:text="@string/login"
+            android:textColor="@color/preto"
+            android:textStyle="bold"
+            app:backgroundTint="@color/branco"
+            app:strokeColor="@color/corPrincipal"
+            app:strokeWidth="4dp"/>
+
+        <Button
+            android:id="@+id/btnRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/registrar"
+            android:textStyle="bold"
+            android:background="@drawable/botao_redondo"
+            app:backgroundTint="@color/corPrincipal"/>
+    </LinearLayout>
+
+
 </LinearLayout>

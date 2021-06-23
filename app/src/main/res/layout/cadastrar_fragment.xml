@@ -6,107 +6,117 @@
     android:layout_height="match_parent"
     tools:context=".aplicacao.cadastro.CadastrarFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="25dp"
+            android:layout_gravity="center"
+            app:strokeColor="@color/corPrincipal"
+            app:strokeWidth="10dp">
+
+            <ImageView
+                android:id="@+id/imgViewFoto"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:src="@drawable/ic_foto" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_nome_completo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/branco"
+                android:fitsSystemWindows="true"
+                android:gravity="center"
+                android:hint="@string/nome_completo"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_cadastrar" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/branco"
+                android:fitsSystemWindows="true"
+                android:gravity="center"
+                android:hint="@string/email"
+                android:inputType="textPersonName"
+                app:layout_constraintTop_toBottomOf="@+id/input_nome_completo"
+                tools:layout_editor_absoluteX="0dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/branco"
+                android:fitsSystemWindows="true"
+                android:gravity="center"
+                android:hint="@string/pass"
+                android:inputType="textPersonName"
+                app:layout_constraintTop_toBottomOf="@+id/input_email"
+                tools:layout_editor_absoluteX="0dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/branco"
+                android:fitsSystemWindows="true"
+                android:gravity="center"
+                android:hint="@string/confirm_pass"
+                android:inputType="textPersonName"
+                app:layout_constraintTop_toBottomOf="@+id/input_password"
+                tools:layout_editor_absoluteX="6dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/btn_cadastrar_back"
-            android:layout_width="52dp"
-            android:layout_height="35dp"
-            android:text="Button"
-            android:background="@color/float_transparent"
-            app:icon="@drawable/ic_baseline_chevron_left_24"
-            app:iconTint="#000000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.018" />
-
-        <TextView
-            android:id="@+id/txt_cadastrar"
-            android:layout_width="158dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="24dp"
-            android:text="Cadastrar"
-            android:textColor="@color/preto"
-            android:textSize="36dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.063"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_cadastrar_back"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_nome_completo"
+            android:id="@+id/btn_cadastrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/branco"
-            android:fitsSystemWindows="true"
-            android:gravity="center"
-            android:hint="@string/nome_completo"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_cadastrar" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/branco"
-            android:fitsSystemWindows="true"
-            android:gravity="center"
-            android:hint="@string/email"
-            android:inputType="textPersonName"
-            app:layout_constraintTop_toBottomOf="@+id/input_nome_completo"
-            tools:layout_editor_absoluteX="0dp" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/branco"
-            android:fitsSystemWindows="true"
-            android:gravity="center"
-            android:hint="@string/pass"
-            android:inputType="textPersonName"
-            app:layout_constraintTop_toBottomOf="@+id/input_email"
-            tools:layout_editor_absoluteX="0dp" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_confirm_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/branco"
-            android:fitsSystemWindows="true"
-            android:gravity="center"
-            android:hint="@string/confirm_pass"
-            android:inputType="textPersonName"
-            app:layout_constraintTop_toBottomOf="@+id/input_password"
-            tools:layout_editor_absoluteX="6dp" />
-
-        <Button
-            android:id="@+id/btn_logar"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/preto"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:text="CADASTRAR"
+            android:layout_margin="20dp"
+            android:text="@string/cadastrar"
             android:textColor="@color/branco"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_confirm_password" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:background="@drawable/botao_redondo"
+            app:backgroundTint="@color/corPrincipal"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
 </FrameLayout>
