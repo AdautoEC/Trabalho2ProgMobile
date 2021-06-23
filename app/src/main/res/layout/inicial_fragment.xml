@@ -20,17 +20,17 @@
         android:layout_marginBottom="10dp">
 
         <com.google.android.material.button.MaterialButton
-            style="@style/Widget.AppCompat.Button.Colored"
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="5dp"
             android:layout_weight="1"
-            android:background="@drawable/botao_redondo"
             android:text="@string/login"
             android:textColor="@color/preto"
             android:textStyle="bold"
+            app:cornerRadius="10dp"
+            style="?attr/materialButtonOutlinedStyle"
             app:backgroundTint="@color/branco"
             app:strokeColor="@color/corPrincipal"
             app:strokeWidth="4dp"/>
@@ -46,6 +46,7 @@
             android:textStyle="bold"
             android:background="@drawable/botao_redondo"
             app:backgroundTint="@color/corPrincipal"/>
+
     </LinearLayout>
 
 
