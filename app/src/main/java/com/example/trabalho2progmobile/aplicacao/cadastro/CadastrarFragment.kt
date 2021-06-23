@@ -9,7 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.trabalho2progmobile.R
-import com.example.trabalho2progmobile.utils.BaseFragment
+import com.example.trabalho2progmobile.utils.mvvm.BaseFragment
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.cadastrar_fragment.*

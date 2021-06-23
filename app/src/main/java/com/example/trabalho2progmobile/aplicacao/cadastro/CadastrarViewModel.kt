@@ -3,9 +3,12 @@ package com.example.trabalho2progmobile.aplicacao.cadastro
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.trabalho2progmobile.R
-import com.example.trabalho2progmobile.utils.BaseViewModel
+import com.example.trabalho2progmobile.bancoDeDados.usuario.repository.IUsuarioRepository
+import com.example.trabalho2progmobile.utils.mvvm.BaseViewModel
 
-class CadastrarViewModel: BaseViewModel() {
+class CadastrarViewModel(
+    usuarioRepository: IUsuarioRepository
+): BaseViewModel() {
 
     val erroNome: LiveData<Int> get() = _erroNome
     private val _erroNome by lazy { MutableLiveData<Int>() }

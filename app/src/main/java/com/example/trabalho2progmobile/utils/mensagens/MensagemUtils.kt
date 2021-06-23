@@ -1,4 +1,4 @@
-package com.example.trabalho2progmobile.utils
+package com.example.trabalho2progmobile.utils.mensagens
 
 import android.content.Context
 import android.widget.Toast
