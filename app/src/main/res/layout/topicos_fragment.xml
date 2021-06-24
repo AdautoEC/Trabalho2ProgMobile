@@ -4,16 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".topicosFragment">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tópicos"
-            android:textStyle="bold"
-            android:textColor="@color/corPrincipal"
-            android:textSize="36dp"
-            android:layout_marginLeft="20dp"/>
+    tools:context=".aplicacao.topicos.TopicosFragment">
 
 
         <ListView

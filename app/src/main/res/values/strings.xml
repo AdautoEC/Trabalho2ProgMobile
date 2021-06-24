@@ -3,7 +3,7 @@
 
     <!--  Nomes das telas  -->
     <string name="cadastrar">Cadastrar</string>
-    <string name="topicos">TÓPICOS</string>
+    <string name="topicos">Tópicos</string>
     <string name="editarPerfil">EDITAR PERFIL</string>
     <string name="salvarPerfil">SALVAR PERFIL</string>
 
