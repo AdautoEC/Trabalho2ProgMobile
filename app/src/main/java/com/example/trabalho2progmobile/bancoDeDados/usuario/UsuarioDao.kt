@@ -4,7 +4,7 @@ import androidx.room.*
 
 @Dao
 interface UsuarioDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun inserirUsuario(usuario: Usuario)
 
     @Query("SELECT * FROM usuario")

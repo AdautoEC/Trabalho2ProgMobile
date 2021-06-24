@@ -95,6 +95,7 @@ class CadastrarFragment: BaseFragment() {
             }
             else{
                 opcoesDialog(R.string.dialog_remover, R.string.salvando_usuario)
+                exibirMensagem(getString(R.string.erro_inserir_usuario))
             }
         }
     }

@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.trabalho2progmobile.R
 import com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario
 import com.example.trabalho2progmobile.bancoDeDados.usuario.repository.IUsuarioRepository
+import com.example.trabalho2progmobile.utils.criptografia.Criptografia.Companion.encriptografarMensagem
 import com.example.trabalho2progmobile.utils.retorno.Resultado
 import com.example.trabalho2progmobile.utils.mvvm.abstracts.dadosDoUsuario.AbstractDadosDoUsuarioViewModel
 
@@ -31,7 +32,8 @@ class CadastrarViewModel(
         _dadosCorretos.value = verificarNome && verificarEmail && verificarSenhas
     }
 
-    fun inserirUsuarioNoBanco(usuario: Usuario){
+    fun inserirUsuarioNoBanco(usuario: Usuario) {
+        usuario.senha = encriptografarMensagem(usuario.senha)
         _usuarioInserido.value = Resultado(Resultado.ResultadoStatus.CARREGANDO, false)
         _usuarioInserido.value = Resultado(
             Resultado.ResultadoStatus.FINALIZADO,

@@ -1,4 +1,4 @@
-package com.example.trabalho2progmobile.utils.mvvm
+package com.example.trabalho2progmobile.utils.mvvm.di
 
 import androidx.room.Room
 import com.example.trabalho2progmobile.aplicacao.cadastro.CadastrarViewModel

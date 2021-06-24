@@ -10,6 +10,6 @@ data class Usuario(
     val usuarioId: Int = 0,
     val nome: String,
     val email: String,
-    val senha: String,
+    var senha: String,
     val foto: Bitmap
 )

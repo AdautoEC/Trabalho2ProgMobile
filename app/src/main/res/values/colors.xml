@@ -8,4 +8,5 @@
     <color name="preto">#FF000000</color>
     <color name="branco">#FFFFFFFF</color>
     <color name="vermelhoErroDark">#d44747</color>
+    <color name="verdeOk">#228B22</color>
 </resources>
