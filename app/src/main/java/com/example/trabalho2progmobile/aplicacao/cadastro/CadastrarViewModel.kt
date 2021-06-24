@@ -15,9 +15,6 @@ class CadastrarViewModel(
     val erroNome: LiveData<Int> get() = _erroNome
     private val _erroNome by lazy { MutableLiveData<Int>() }
 
-    val dadosCorretos: LiveData<Boolean> get() = _dadosCorretos
-    private val _dadosCorretos by lazy { MutableLiveData<Boolean>() }
-
     val usuarioInserido: LiveData<Resultado> get() = _usuarioInserido
     private val _usuarioInserido by lazy { MutableLiveData<Resultado>() }
 

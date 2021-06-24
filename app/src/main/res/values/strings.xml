@@ -25,6 +25,7 @@
     <string name="cancelar">Cancelar</string>
     <string name="confirmar">Confirmar</string>
 
+    <!-- Strings -->
     <string name="digite_o_nome">Digite o Nome</string>
     <string name="registrar">Registrar</string>
     <string name="login">Login</string>
@@ -34,5 +35,6 @@
     <string name="confirm_pass">Confirmar senha</string>
     <string name="usuario_inserido">Usuário Inserido com Sucesso!</string>
     <string name="blogtop">blogTop</string>
+    <string name="erro_login">Email e/ou senha incorretos</string>
 
 </resources>

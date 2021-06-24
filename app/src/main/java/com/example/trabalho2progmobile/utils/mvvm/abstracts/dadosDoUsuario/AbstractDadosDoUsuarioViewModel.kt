@@ -15,6 +15,9 @@ abstract class AbstractDadosDoUsuarioViewModel: BaseViewModel() {
     val erroConfirmarSenha: LiveData<Int> get() = _erroConfirmarSenha
     protected val _erroConfirmarSenha by lazy { MutableLiveData<Int>() }
 
+    val dadosCorretos: LiveData<Boolean> get() = _dadosCorretos
+    protected val _dadosCorretos by lazy { MutableLiveData<Boolean>() }
+
     protected fun verificarEmail(email: String): Boolean{
         return if(email.isNotEmpty()) true
         else {

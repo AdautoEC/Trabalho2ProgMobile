@@ -3,11 +3,15 @@ package com.example.trabalho2progmobile.aplicacao.login
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.trabalho2progmobile.R
+import com.example.trabalho2progmobile.bancoDeDados.usuario.repository.IUsuarioRepository
 import com.example.trabalho2progmobile.utils.mvvm.abstracts.dadosDoUsuario.AbstractDadosDoUsuarioViewModel
 
-class LoginViewModel : AbstractDadosDoUsuarioViewModel() {
-    val dadosCorretos: LiveData<Boolean> get() = _dadosCorretos
-    private val _dadosCorretos by lazy { MutableLiveData<Boolean>() }
+class LoginViewModel(
+    val usuarioRepository: IUsuarioRepository
+) : AbstractDadosDoUsuarioViewModel() {
+
+    val realizarLogin: LiveData<Boolean> get() = _realizarLogin
+    private val _realizarLogin by lazy { MutableLiveData<Boolean>() }
 
     fun verificarCampos(
         email: String,
@@ -26,4 +30,12 @@ class LoginViewModel : AbstractDadosDoUsuarioViewModel() {
             false
         }
     }
+
+    fun buscarUsuarioParaLogin(email: String, senha: String){
+        val usuario = usuarioRepository.buscarUsuarioPeloEmail(email)
+        if(usuario != null){
+            _realizarLogin.value = usuario.senha == senha
+        }
+    }
+
 }

@@ -5,10 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.trabalho2progmobile.R
-import com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario
 import com.example.trabalho2progmobile.utils.mvvm.abstracts.base.BaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.cadastrar_fragment.*
 import kotlinx.android.synthetic.main.login_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -47,8 +45,18 @@ class LoginFragment: BaseFragment() {
         }
         _viewModel.dadosCorretos.observe(viewLifecycleOwner) {
             if(it)
-                print("a")
+                _viewModel.buscarUsuarioParaLogin(
+                    input_email_login.text.toString(),
+                    input_password_login.text.toString()
+                )
+        }
+        _viewModel.realizarLogin.observe(viewLifecycleOwner) {
+            if(it) navegarParaProximaTela()
+            else exibirMensagem(getString(R.string.erro_login))
         }
     }
 
+    private fun navegarParaProximaTela(){
+        print("a")
+    }
 }

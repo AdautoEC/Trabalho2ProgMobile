@@ -34,7 +34,9 @@ val viewModelModule = module {
     }
 
     viewModel {
-        LoginViewModel()
+        LoginViewModel(
+            usuarioRepository = get()
+        )
     }
 
     viewModel {
