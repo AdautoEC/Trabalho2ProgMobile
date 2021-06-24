@@ -1,4 +1,4 @@
-package com.example.trabalho2progmobile
+package com.example.trabalho2progmobile.aplicacao.perfil
 
 import androidx.lifecycle.ViewModel
 
