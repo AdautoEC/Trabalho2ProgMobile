@@ -1,10 +1,11 @@
-package com.example.trabalho2progmobile.utils.mvvm
+package com.example.trabalho2progmobile.utils.mvvm.abstracts.base
 
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import com.example.trabalho2progmobile.R
 import com.example.trabalho2progmobile.utils.dialog.LoadingDialog
 import com.example.trabalho2progmobile.utils.mensagens.MensagemUtils.Companion.mostrarMensagem
+import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -39,9 +40,13 @@ abstract class BaseFragment: Fragment() {
         }
     }
 
-    fun exibirMensagem(mensagem: String) {
+    protected fun exibirMensagem(mensagem: String) {
         CoroutineScope(Dispatchers.Main).launch {
             mostrarMensagem(requireContext(), mensagem)
         }
+    }
+
+    protected fun mostrarErroDoMaskEditText(editText: TextInputEditText, erro: Int){
+        editText.error = getString(erro)
     }
 }

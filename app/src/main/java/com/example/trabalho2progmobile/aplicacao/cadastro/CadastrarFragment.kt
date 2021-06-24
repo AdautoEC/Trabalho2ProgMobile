@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.trabalho2progmobile.R
 import com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario
 import com.example.trabalho2progmobile.utils.converters.Converters
-import com.example.trabalho2progmobile.utils.mvvm.BaseFragment
+import com.example.trabalho2progmobile.utils.mvvm.abstracts.base.BaseFragment
 import com.example.trabalho2progmobile.utils.retorno.Resultado
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,6 +23,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class CadastrarFragment: BaseFragment() {
     private val REQUEST_IMAGE_CAPTURE = 1
     private val _viewModel: CadastrarViewModel by viewModel()
+    var foto: Bitmap? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +41,7 @@ class CadastrarFragment: BaseFragment() {
 
     private fun setupUi(){
         btn_cadastrar.setOnClickListener {
-            _viewModel.verificarCampo(
+            _viewModel.verificarCampos(
                 input_nome_completo.text.toString(),
                 input_email.text.toString(),
                 input_password.text.toString(),
@@ -73,9 +74,7 @@ class CadastrarFragment: BaseFragment() {
                     input_nome_completo.text.toString(),
                     input_email.text.toString(),
                     input_password.text.toString(),
-                    Converters().drawableToBitmap(
-                        requireContext().getDrawable(R.drawable.ic_foto)!!
-                    )
+                    verificarSeEFotoOuDrawable()
                 )
             )
         }
@@ -100,10 +99,6 @@ class CadastrarFragment: BaseFragment() {
         }
     }
 
-    private fun mostrarErroDoMaskEditText(editText: TextInputEditText, erro: Int){
-        editText.error = getString(erro)
-    }
-
     private fun capturePhoto() {
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
             takePictureIntent.resolveActivity(requireActivity().packageManager)?.also {
@@ -116,7 +111,18 @@ class CadastrarFragment: BaseFragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             val imageBitmap = data!!.extras!!.get("data") as Bitmap
-            imgViewFoto.setImageBitmap(Converters().getRoundedCornerBitmap(imageBitmap, 60))
+            foto = imageBitmap
+            imgViewFoto.setImageBitmap(Converters().getRoundedCornerBitmap(imageBitmap, 360))
+        }
+    }
+
+    private fun verificarSeEFotoOuDrawable(): Bitmap{
+        return if(foto != null){
+            foto as Bitmap
+        } else{
+            Converters().drawableToBitmap(
+                requireContext().getDrawable(R.drawable.ic_foto)!!
+            )
         }
     }
 }
