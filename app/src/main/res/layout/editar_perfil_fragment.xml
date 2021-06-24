@@ -26,48 +26,79 @@
                 android:id="@+id/imgViewFoto"
                 android:layout_width="150dp"
                 android:layout_height="100dp"
-                app:cornerRadius="180dp"
                 android:src="@drawable/ic_foto" />
 
         </androidx.cardview.widget.CardView>
 
-        <TextView
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="36dp"
-            android:text="Nome Ex"
-            android:textColor="@color/preto"
-            android:textSize="28dp"
-            />
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            app:startIconDrawable="@drawable/ic_pessoa"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
-        <TextView
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_nome_completo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/branco"
+                android:fitsSystemWindows="true"
+                android:hint="@string/nome_completo"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_cadastrar" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:text="email@test.com"
-            android:textColor="@color/preto"
-            android:textSize="14dp"
-            />
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@drawable/ic_senha"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/branco"
+                android:fitsSystemWindows="true"
+                android:hint="@string/pass"
+                android:inputType="textPassword"
+                app:layout_constraintTop_toBottomOf="@+id/input_email"
+                tools:layout_editor_absoluteX="0dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btn_topios"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="36dp"
-            android:text="@string/topicos"
-            android:textColor="@color/preto"
-            app:cornerRadius="10dp"
-            app:strokeWidth="4dp"
-            app:backgroundTint="@color/branco"
-            style="?attr/materialButtonOutlinedStyle"
-            app:strokeColor="@color/preto"
-            android:textStyle="bold"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@drawable/ic_senha"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/branco"
+                android:fitsSystemWindows="true"
+                android:hint="@string/confirm_pass"
+                android:inputType="textPassword"
+                app:layout_constraintTop_toBottomOf="@+id/input_password"
+                tools:layout_editor_absoluteX="6dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <Button
@@ -75,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="@string/editarPerfil"
+            android:text="@string/salvarPerfil"
             android:textColor="@color/branco"
             android:background="@drawable/botao_redondo"
             app:backgroundTint="@color/corPrincipal"
