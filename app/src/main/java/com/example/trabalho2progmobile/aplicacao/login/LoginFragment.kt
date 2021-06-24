@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.trabalho2progmobile.R
+import com.example.trabalho2progmobile.aplicacao.inicial.InicialFragmentDirections
+import com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario
 import com.example.trabalho2progmobile.utils.mvvm.abstracts.base.BaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.login_fragment.*
@@ -51,12 +54,14 @@ class LoginFragment: BaseFragment() {
                 )
         }
         _viewModel.realizarLogin.observe(viewLifecycleOwner) {
-            if(it) navegarParaProximaTela()
+            if(it.realizar) navegarParaProximaTela(it.usuario)
             else exibirMensagem(getString(R.string.erro_login))
         }
     }
 
-    private fun navegarParaProximaTela(){
-        print("a")
+    private fun navegarParaProximaTela(usuario: Usuario){
+        val navController = findNavController()
+        val action = LoginFragmentDirections.actionLoginFragmentToTopicosFragment()
+        navController.navigate(action)
     }
 }

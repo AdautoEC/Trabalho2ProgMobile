@@ -1,4 +1,4 @@
-package com.example.trabalho2progmobile
+package com.example.trabalho2progmobile.aplicacao.perfil
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,11 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.trabalho2progmobile.R
 
-class perfilFragment : Fragment() {
+class PerfilFragment : Fragment() {
 
     companion object {
-        fun newInstance() = perfilFragment()
+        fun newInstance() = PerfilFragment()
     }
 
     private lateinit var viewModel: PerfilViewModel
