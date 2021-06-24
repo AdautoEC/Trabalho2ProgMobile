@@ -1,4 +1,4 @@
-package com.example.trabalho2progmobile.utils.mvvm
+package com.example.trabalho2progmobile.utils.mvvm.abstracts.base
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

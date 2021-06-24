@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.trabalho2progmobile.R
 import com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario
 import com.example.trabalho2progmobile.utils.converters.Converters
-import com.example.trabalho2progmobile.utils.mvvm.BaseFragment
+import com.example.trabalho2progmobile.utils.mvvm.abstracts.base.BaseFragment
 import com.example.trabalho2progmobile.utils.retorno.Resultado
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_main.*
@@ -41,7 +41,7 @@ class CadastrarFragment: BaseFragment() {
 
     private fun setupUi(){
         btn_cadastrar.setOnClickListener {
-            _viewModel.verificarCampo(
+            _viewModel.verificarCampos(
                 input_nome_completo.text.toString(),
                 input_email.text.toString(),
                 input_password.text.toString(),
@@ -97,10 +97,6 @@ class CadastrarFragment: BaseFragment() {
                 opcoesDialog(R.string.dialog_remover, R.string.salvando_usuario)
             }
         }
-    }
-
-    private fun mostrarErroDoMaskEditText(editText: TextInputEditText, erro: Int){
-        editText.error = getString(erro)
     }
 
     private fun capturePhoto() {
