@@ -1,6 +1,6 @@
 package com.example.trabalho2progmobile.aplicacao.cadastro
 
-import android.app.Activity
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.trabalho2progmobile.R
 import com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario
 import com.example.trabalho2progmobile.utils.converters.Converters
@@ -17,11 +18,10 @@ import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.cadastrar_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import androidx.navigation.fragment.findNavController
+
 
 class CadastrarFragment: BaseFragment() {
-
-    private val REQUEST_CODE = 200
+    private val REQUEST_IMAGE_CAPTURE = 1
     private val _viewModel: CadastrarViewModel by viewModel()
 
     override fun onCreateView(
@@ -105,14 +105,18 @@ class CadastrarFragment: BaseFragment() {
     }
 
     private fun capturePhoto() {
-        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(cameraIntent, REQUEST_CODE)
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
+            takePictureIntent.resolveActivity(requireActivity().packageManager)?.also {
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+            }
+        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE && data != null){
-            imgViewFoto.setImageBitmap(data.extras!!.get("data") as Bitmap)
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            val imageBitmap = data!!.extras!!.get("data") as Bitmap
+            imgViewFoto.setImageBitmap(Converters().getRoundedCornerBitmap(imageBitmap, 60))
         }
     }
 }

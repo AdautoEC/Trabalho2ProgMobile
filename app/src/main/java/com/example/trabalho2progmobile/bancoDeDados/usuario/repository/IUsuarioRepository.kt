@@ -5,7 +5,7 @@ import com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario
 interface IUsuarioRepository {
     fun inserirUsuario(usuario: Usuario): Boolean
     fun buscarUsuarios(): List<Usuario>
-    fun buscarUsuarioPeloId(usuarioId: Int): Usuario
+    fun buscarUsuarioPeloEmail(email: String): Usuario
     fun atualizarUsuario(usuario: Usuario): Boolean
     fun deletarUsuario(usuario: Usuario): Boolean
 }
