@@ -10,8 +10,8 @@ interface UsuarioDao {
     @Query("SELECT * FROM usuario")
     suspend fun getAllUsuarios(): List<Usuario>
 
-    @Query("SELECT * FROM usuario WHERE usuarioId == :usuarioId")
-    suspend fun getUsuarioById(usuarioId: Int): Usuario
+    @Query("SELECT * FROM usuario WHERE email == :email")
+    suspend fun getUsuarioByEmail(email: String): Usuario
 
     @Update
     suspend fun updateUsuario(usuario: Usuario)

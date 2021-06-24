@@ -2,9 +2,6 @@ package com.example.trabalho2progmobile.bancoDeDados.usuario.repository
 
 import com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario
 import com.example.trabalho2progmobile.bancoDeDados.usuario.UsuarioDao
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 class UsuarioRepository(
@@ -24,8 +21,8 @@ class UsuarioRepository(
         return@runBlocking usuarioDao.getAllUsuarios()
     }
 
-    override fun buscarUsuarioPeloId(usuarioId: Int): Usuario = runBlocking{
-        return@runBlocking usuarioDao.getUsuarioById(usuarioId)
+    override fun buscarUsuarioPeloEmail(email: String): Usuario = runBlocking{
+        return@runBlocking usuarioDao.getUsuarioByEmail(email)
     }
 
     override fun atualizarUsuario(usuario: Usuario): Boolean = runBlocking{
