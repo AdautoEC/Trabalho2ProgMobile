@@ -23,6 +23,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class CadastrarFragment: BaseFragment() {
     private val REQUEST_IMAGE_CAPTURE = 1
     private val _viewModel: CadastrarViewModel by viewModel()
+    var foto: Bitmap? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -73,9 +74,7 @@ class CadastrarFragment: BaseFragment() {
                     input_nome_completo.text.toString(),
                     input_email.text.toString(),
                     input_password.text.toString(),
-                    Converters().drawableToBitmap(
-                        requireContext().getDrawable(R.drawable.ic_foto)!!
-                    )
+                    verificarSeEFotoOuDrawable()
                 )
             )
         }
@@ -116,7 +115,18 @@ class CadastrarFragment: BaseFragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             val imageBitmap = data!!.extras!!.get("data") as Bitmap
+            foto = imageBitmap
             imgViewFoto.setImageBitmap(Converters().getRoundedCornerBitmap(imageBitmap, 360))
+        }
+    }
+
+    private fun verificarSeEFotoOuDrawable(): Bitmap{
+        return if(foto != null){
+            foto as Bitmap
+        } else{
+            Converters().drawableToBitmap(
+                requireContext().getDrawable(R.drawable.ic_foto)!!
+            )
         }
     }
 }
