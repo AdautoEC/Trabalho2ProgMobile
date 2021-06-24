@@ -33,5 +33,6 @@
     <string name="pass">Senha</string>
     <string name="confirm_pass">Confirmar senha</string>
     <string name="usuario_inserido">Usuário Inserido com Sucesso!</string>
+    <string name="blogtop">blogTop</string>
 
 </resources>

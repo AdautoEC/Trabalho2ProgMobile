@@ -116,7 +116,7 @@ class CadastrarFragment: BaseFragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             val imageBitmap = data!!.extras!!.get("data") as Bitmap
-            imgViewFoto.setImageBitmap(Converters().getRoundedCornerBitmap(imageBitmap, 60))
+            imgViewFoto.setImageBitmap(Converters().getRoundedCornerBitmap(imageBitmap, 360))
         }
     }
 }
