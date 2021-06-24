@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_inicialFragment_to_editarPerfilFragment"
             app:destination="@id/editarPerfilFragment" />
+        <action
+            android:id="@+id/action_inicialFragment_to_topicosFragment"
+            app:destination="@id/topicosFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -43,4 +46,9 @@
         android:name="com.example.trabalho2progmobile.editarPerfilFragment"
         android:label="editar_perfil_fragment"
         tools:layout="@layout/editar_perfil_fragment" />
+    <fragment
+        android:id="@+id/topicosFragment"
+        android:name="com.example.trabalho2progmobile.topicosFragment"
+        android:label="topicos_fragment"
+        tools:layout="@layout/topicos_fragment" />
 </navigation>

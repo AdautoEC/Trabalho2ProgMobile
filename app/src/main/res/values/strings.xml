@@ -5,6 +5,7 @@
     <string name="cadastrar">Cadastrar</string>
     <string name="topicos">TÓPICOS</string>
     <string name="editarPerfil">EDITAR PERFIL</string>
+    <string name="salvarPerfil">SALVAR PERFIL</string>
 
     <!--  Erros EditText  -->
     <string name="erro_nome_vazio">Nome não pode ser vazio</string>
