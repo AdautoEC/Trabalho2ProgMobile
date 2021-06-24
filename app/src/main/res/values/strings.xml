@@ -37,5 +37,6 @@
     <string name="usuario_inserido">Usuário Inserido com Sucesso!</string>
     <string name="blogtop">blogTop</string>
     <string name="erro_login">Email e/ou senha incorretos</string>
+    <string name="erro_inserir_usuario">Erro ao inserir Usuário</string>
 
 </resources>

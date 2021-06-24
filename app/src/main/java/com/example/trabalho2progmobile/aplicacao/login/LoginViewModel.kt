@@ -3,7 +3,10 @@ package com.example.trabalho2progmobile.aplicacao.login
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.trabalho2progmobile.R
+import com.example.trabalho2progmobile.bancoDeDados.usuario.UsuarioDao
 import com.example.trabalho2progmobile.bancoDeDados.usuario.repository.IUsuarioRepository
+import com.example.trabalho2progmobile.bancoDeDados.usuario.repository.UsuarioRepository
+import com.example.trabalho2progmobile.utils.criptografia.Criptografia.Companion.encriptografarMensagem
 import com.example.trabalho2progmobile.utils.mvvm.abstracts.dadosDoUsuario.AbstractDadosDoUsuarioViewModel
 
 class LoginViewModel(
@@ -34,7 +37,7 @@ class LoginViewModel(
     fun buscarUsuarioParaLogin(email: String, senha: String){
         val usuario = usuarioRepository.buscarUsuarioPeloEmail(email)
         if(usuario != null){
-            _realizarLogin.value = usuario.senha == senha
+            _realizarLogin.value = usuario.senha == encriptografarMensagem(senha)
         }
     }
 
