@@ -4,7 +4,11 @@ import androidx.room.Room
 import com.example.trabalho2progmobile.aplicacao.cadastro.CadastrarViewModel
 import com.example.trabalho2progmobile.aplicacao.inicial.InicialViewModel
 import com.example.trabalho2progmobile.aplicacao.login.LoginViewModel
+import com.example.trabalho2progmobile.aplicacao.topicos.TopicosViewModel
 import com.example.trabalho2progmobile.bancoDeDados.BancoDeDados
+import com.example.trabalho2progmobile.bancoDeDados.topico.TopicoDao
+import com.example.trabalho2progmobile.bancoDeDados.topico.repository.ITopicoRepository
+import com.example.trabalho2progmobile.bancoDeDados.topico.repository.TopicoRepository
 import com.example.trabalho2progmobile.bancoDeDados.usuario.UsuarioDao
 import com.example.trabalho2progmobile.bancoDeDados.usuario.repository.IUsuarioRepository
 import com.example.trabalho2progmobile.bancoDeDados.usuario.repository.UsuarioRepository
@@ -29,6 +33,16 @@ val viewModelModule = module {
         )
     }
 
+    single<TopicoDao>{
+        get<BancoDeDados>().topicoDao()
+    }
+
+    single<ITopicoRepository>{
+        TopicoRepository(
+            topicoDao = get()
+        )
+    }
+
     viewModel {
         InicialViewModel()
     }
@@ -36,6 +50,12 @@ val viewModelModule = module {
     viewModel {
         LoginViewModel(
             usuarioRepository = get()
+        )
+    }
+
+    viewModel {
+        TopicosViewModel(
+            topicoRepository = get()
         )
     }
 

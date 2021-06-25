@@ -8,6 +8,7 @@ import androidx.navigation.fragment.navArgs
 import com.example.trabalho2progmobile.R
 import com.example.trabalho2progmobile.utils.mvvm.abstracts.base.BaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.login_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TopicosFragment: BaseFragment() {
@@ -21,9 +22,16 @@ class TopicosFragment: BaseFragment() {
         return inflater.inflate(R.layout.topicos_fragment, container, false)
     }
 
+
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         requireActivity().toolbar.setTitle(R.string.topicos)
+        setupUi()
+    }
+
+    private fun setupUi(){
+        _viewModel.
     }
 
 }
