@@ -12,7 +12,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TopicosFragment: BaseFragment() {
     private val _viewModel: TopicosViewModel by viewModel()
-//    private val args: TopicosFragmentArgs by navArgs()
+    private val args: TopicosFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,6 +24,7 @@ class TopicosFragment: BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         requireActivity().toolbar.setTitle(R.string.topicos)
+        print(args.usuario)
     }
 
 }

@@ -61,7 +61,7 @@ class LoginFragment: BaseFragment() {
 
     private fun navegarParaProximaTela(usuario: Usuario){
         val navController = findNavController()
-        val action = LoginFragmentDirections.actionLoginFragmentToTopicosFragment()
+        val action = LoginFragmentDirections.actionLoginFragmentToTopicosFragment(usuario)
         navController.navigate(action)
     }
 }
