@@ -53,5 +53,8 @@
         <action
             android:id="@+id/action_topicosFragment_to_perfilFragment"
             app:destination="@id/perfilFragment" />
+        <argument
+            android:name="usuario"
+            app:argType="com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario" />
     </fragment>
 </navigation>

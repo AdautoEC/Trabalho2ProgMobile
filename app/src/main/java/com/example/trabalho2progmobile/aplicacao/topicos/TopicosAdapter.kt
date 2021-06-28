@@ -11,15 +11,15 @@ import com.example.trabalho2progmobile.databinding.TopicoFragmentBinding
 class TopicosAdapter(
     private val topicos: List<Topico>,
     private val listenerIProdutos: ITopicosRecyclerViewClickListener
-): RecyclerView.Adapter<TopicosAdapter.topicosViewHolder>() {
+): RecyclerView.Adapter<TopicosAdapter.TopicosViewHolder>() {
 
-    inner class topicosViewHolder(
+    inner class TopicosViewHolder(
         val recyclerviewTopicoBinding: TopicoFragmentBinding
     ): RecyclerView.ViewHolder(recyclerviewTopicoBinding.root)
 
     override fun getItemCount() = topicos.size
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = topicosViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = TopicosViewHolder(
         DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
             R.layout.topicos_fragment,
@@ -28,7 +28,7 @@ class TopicosAdapter(
         )
     )
 
-    override fun onBindViewHolder(holder: topicosViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: TopicosViewHolder, position: Int) {
         holder.recyclerviewTopicoBinding.topico = topicos[position]
 
         holder.recyclerviewTopicoBinding.root.setOnClickListener {

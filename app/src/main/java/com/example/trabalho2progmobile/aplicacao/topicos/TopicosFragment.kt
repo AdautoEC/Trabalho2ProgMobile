@@ -16,7 +16,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TopicosFragment: BaseFragment(), ITopicosRecyclerViewClickListener {
     private val _viewModel: TopicosViewModel by viewModel()
-//    private val args: TopicosFragmentArgs by navArgs()
+    private val args: TopicosFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,23 +25,20 @@ class TopicosFragment: BaseFragment(), ITopicosRecyclerViewClickListener {
         return inflater.inflate(R.layout.topicos_fragment, container, false)
     }
 
-
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         requireActivity().toolbar.setTitle(R.string.topicos)
         setupUi()
-        _viewModel.inserirTopico()
         criarRecylerView()
     }
 
     private fun criarRecylerView(){
-        val listaDeTopicos = _viewModel.listarTopicos()
-        recyclerViewTopicos.also{
-            it.layoutManager = GridLayoutManager(requireContext(), 1)
-            it.setHasFixedSize(true)
-            it.adapter = TopicosAdapter(listaDeTopicos, this)
-        }
+//        val listaDeTopicos = _viewModel.listarTopicos()
+//        recyclerViewTopicos.also{
+//            it.layoutManager = GridLayoutManager(requireContext(), 1)
+//            it.setHasFixedSize(true)
+//            it.adapter = TopicosAdapter(listaDeTopicos, this)
+//        }
     }
 
     private fun setupUi(){
