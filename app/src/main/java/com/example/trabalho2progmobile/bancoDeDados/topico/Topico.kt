@@ -11,6 +11,7 @@ data class Topico(
     @PrimaryKey(autoGenerate = true)
     val topicoId: Int = 0,
     val nome: String,
+    val hora: String,
     val descricao: String,
 
 )

@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".aplicacao.topicos.TopicosFragment">
 
-
-        <ListView
-            android:id="@+id/lstViewAlunoCursos"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:divider="@color/corPrincipal" >
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        </ListView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewTopicos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/topico_fragment">
 
-</LinearLayout>
+                </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+</FrameLayout>
