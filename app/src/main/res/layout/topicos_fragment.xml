@@ -11,20 +11,18 @@
             android:layout_height="match_parent">
 
                 <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_margin="5dp">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerViewTopicos"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    tools:listitem="@layout/topico_fragment">
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
 
-                </androidx.recyclerview.widget.RecyclerView>
-
-        </LinearLayout>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerViewTopicos"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:listitem="@layout/recyclerview_topicos">
+                        </androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
 
                 <FrameLayout
                     android:layout_width="wrap_content"
@@ -61,9 +59,7 @@
                                     app:fab_icon="@drawable/ic_editar_perfil"
                                     app:fab_size="mini"
                                     app:fab_title="@string/editar_perfil" />
-
                         </com.getbase.floatingactionbutton.FloatingActionsMenu>
-
                 </FrameLayout>
         </FrameLayout>
 </FrameLayout>
