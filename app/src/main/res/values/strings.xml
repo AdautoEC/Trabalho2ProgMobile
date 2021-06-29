@@ -38,7 +38,7 @@
     <string name="blogtop">blogTop</string>
     <string name="erro_login">Email e/ou senha incorretos</string>
     <string name="erro_inserir_usuario">Erro ao inserir Usuário</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="novo_topico">Novo Tópico</string>
+    <string name="editar_perfil">Editar Perfil</string>
 
 </resources>

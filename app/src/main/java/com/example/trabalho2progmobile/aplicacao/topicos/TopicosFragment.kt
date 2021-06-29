@@ -10,7 +10,6 @@ import com.example.trabalho2progmobile.R
 import com.example.trabalho2progmobile.bancoDeDados.topico.Topico
 import com.example.trabalho2progmobile.utils.mvvm.abstracts.base.BaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.login_fragment.*
 import kotlinx.android.synthetic.main.topicos_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -29,16 +28,15 @@ class TopicosFragment: BaseFragment(), ITopicosRecyclerViewClickListener {
         super.onActivityCreated(savedInstanceState)
         requireActivity().toolbar.setTitle(R.string.topicos)
         setupUi()
-        criarRecylerView()
     }
 
     private fun criarRecylerView(){
-//        val listaDeTopicos = _viewModel.listarTopicos()
-//        recyclerViewTopicos.also{
-//            it.layoutManager = GridLayoutManager(requireContext(), 1)
-//            it.setHasFixedSize(true)
-//            it.adapter = TopicosAdapter(listaDeTopicos, this)
-//        }
+        val listaDeTopicos = _viewModel.listarTopicos()
+        recyclerViewTopicos.also{
+            it.layoutManager = GridLayoutManager(requireContext(), 1)
+            it.setHasFixedSize(true)
+            it.adapter = TopicosAdapter(listaDeTopicos, this)
+        }
     }
 
     private fun setupUi(){
