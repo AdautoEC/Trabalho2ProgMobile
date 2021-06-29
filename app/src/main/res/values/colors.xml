@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="corPrincipal">#FF000000</color>
-    <color name="corSecundaria">#FFFFFFFF</color>
-    <color name="corBarraDeNotificacao">#404040</color>
-    <color name="corPrincipalVariante">#FF03DAC5</color>
+    <color name="corSecundaria">#FF000000</color>
+    <color name="corBarraDeNotificacao">#FF000000</color>
+    <color name="corPrincipalVariante">#404040</color>
     <color name="corSecundariaVariante">#FF018786</color>
     <color name="preto">#FF000000</color>
     <color name="branco">#FFFFFFFF</color>
+    <color name="vermelhoErroDark">#d44747</color>
+    <color name="verdeOk">#228B22</color>
 </resources>

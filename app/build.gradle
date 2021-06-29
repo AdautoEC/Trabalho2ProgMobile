@@ -65,6 +65,9 @@ dependencies {
     //ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion"
 
+    //RecyclerView
+    implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
+
     //LiveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifeCycleVersion"
 
@@ -102,8 +105,11 @@ dependencies {
     androidTestImplementation "androidx.navigation:navigation-testing:$navVersion"
 
     // Jetpack Compose Integration
-    implementation 'androidx.navigation:navigation-compose:2.4.0-alpha02'
+    implementation 'androidx.navigation:navigation-compose:2.4.0-alpha03'
 
     //Databinding
     kapt 'androidx.databinding:databinding-compiler-common:4.2.1'
+
+    //Floating Action Button and Menu
+    implementation 'com.getbase:floatingactionbutton:1.10.1'
 }

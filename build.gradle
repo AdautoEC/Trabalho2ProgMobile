@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext {
-        kotlinVersion = '1.5.10'
+        kotlinVersion = '1.5.20'
         lifeCycleVersion = '2.3.1'
         recyclerViewVersion = "1.2.1"
         dialogVersion = '1.6.2'
@@ -9,7 +9,7 @@ buildscript {
         maskTextVersion = '4.0.5'
         koinVersion = '3.1.0'
         ankoVersion = "0.10.8"
-        navVersion = "2.3.5"
+        navVersion = "2.4.0-alpha02"
         glideVersion = "4.12.0"
     }
 
