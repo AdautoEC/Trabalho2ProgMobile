@@ -28,6 +28,7 @@ class TopicosFragment: BaseFragment(), ITopicosRecyclerViewClickListener {
         super.onActivityCreated(savedInstanceState)
         requireActivity().toolbar.setTitle(R.string.topicos)
         setupUi()
+        criarRecylerView()
     }
 
     private fun criarRecylerView(){

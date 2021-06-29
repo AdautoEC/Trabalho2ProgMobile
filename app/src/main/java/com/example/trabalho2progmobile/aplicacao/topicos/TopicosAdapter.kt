@@ -6,34 +6,34 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trabalho2progmobile.R
 import com.example.trabalho2progmobile.bancoDeDados.topico.Topico
-import com.example.trabalho2progmobile.databinding.TopicoFragmentBinding
+import com.example.trabalho2progmobile.databinding.RecyclerviewTopicosBinding
 
 class TopicosAdapter(
     private val topicos: List<Topico>,
-    private val listenerIProdutos: ITopicosRecyclerViewClickListener
+    private val listenerITopicos: ITopicosRecyclerViewClickListener
 ): RecyclerView.Adapter<TopicosAdapter.TopicosViewHolder>() {
 
     inner class TopicosViewHolder(
-        val recyclerviewTopicoBinding: TopicoFragmentBinding
-    ): RecyclerView.ViewHolder(recyclerviewTopicoBinding.root)
+        val recyclerViewTopicos: RecyclerviewTopicosBinding
+    ): RecyclerView.ViewHolder(recyclerViewTopicos.root)
 
     override fun getItemCount() = topicos.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = TopicosViewHolder(
         DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
-            R.layout.topicos_fragment,
+            R.layout.recyclerview_topicos,
             parent,
             false
         )
     )
 
     override fun onBindViewHolder(holder: TopicosViewHolder, position: Int) {
-        holder.recyclerviewTopicoBinding.topico = topicos[position]
+        holder.recyclerViewTopicos.topico = topicos[position]
 
-        holder.recyclerviewTopicoBinding.root.setOnClickListener {
-            listenerIProdutos.onTopicosRecyclerViewItemClickListener(
-                holder.recyclerviewTopicoBinding.root,
+        holder.recyclerViewTopicos.root.setOnClickListener {
+            listenerITopicos.onTopicosRecyclerViewItemClickListener(
+                holder.recyclerViewTopicos.root,
                 topicos[position]
             )
         }
