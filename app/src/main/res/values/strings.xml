@@ -35,13 +35,16 @@
     <string name="pass">Senha</string>
     <string name="confirm_pass">Confirmar senha</string>
     <string name="usuario_inserido">Usuário Inserido com Sucesso!</string>
+    <string name="usuario_atualizado">Usuário Atualizado com Sucesso!</string>
     <string name="blogtop">blogTop</string>
     <string name="erro_login">Email e/ou senha incorretos</string>
     <string name="erro_inserir_usuario">Erro ao inserir Usuário</string>
+    <string name="erro_atualizar_usuario">Erro ao Atualizar Usuário</string>
     <string name="novo_topico">Novo Tópico</string>
     <string name="editar_perfil">Editar Perfil</string>
     <string name="postar_topico">Postar Tópico</string>
     <string name="descricao_topico">Descrição do Tópico</string>
     <string name="nome_topico">Nome do Tópico</string>
+    <string name="atualizar">Atualizar</string>
 
 </resources>
