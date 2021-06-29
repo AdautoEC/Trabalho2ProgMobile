@@ -46,6 +46,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+
                 android:layout_marginBottom="10dp"
                 app:startIconDrawable="@drawable/ic_baseline_insert_comment_24"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
@@ -56,7 +57,6 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/branco"
                     android:fitsSystemWindows="true"
-                    android:lines="5"
                     android:hint="@string/descricao_topico"
                     android:inputType="text|textLongMessage"
                     app:layout_constraintTop_toBottomOf="@+id/input_nome_completo"

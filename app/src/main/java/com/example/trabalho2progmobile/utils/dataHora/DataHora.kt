@@ -7,7 +7,7 @@ class DataHora {
     companion object {
         fun gerarDataHora(): String {
             val current = Calendar.getInstance()
-            val formatter = SimpleDateFormat("ddMMyyyy HHmmss")
+            val formatter = SimpleDateFormat("dd/MM/yyyy HH:mm")
             return formatter.format(current.time)
         }
     }
