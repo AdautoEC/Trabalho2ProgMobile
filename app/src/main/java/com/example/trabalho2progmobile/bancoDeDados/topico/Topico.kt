@@ -1,11 +1,11 @@
 package com.example.trabalho2progmobile.bancoDeDados.topico
 
-import android.graphics.Bitmap
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 @Entity(tableName = "topicos")
 data class Topico(
     @PrimaryKey(autoGenerate = true)
@@ -13,5 +13,4 @@ data class Topico(
     val nome: String,
     val hora: String,
     val descricao: String,
-
-)
+): Parcelable

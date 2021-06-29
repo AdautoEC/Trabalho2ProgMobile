@@ -4,9 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.trabalho2progmobile.R
+import com.example.trabalho2progmobile.aplicacao.inicial.InicialFragmentDirections
+import com.example.trabalho2progmobile.aplicacao.topicos.adapter.ITopicosRecyclerViewClickListener
+import com.example.trabalho2progmobile.aplicacao.topicos.adapter.TopicosAdapter
 import com.example.trabalho2progmobile.bancoDeDados.topico.Topico
 import com.example.trabalho2progmobile.utils.mvvm.abstracts.base.BaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -41,7 +45,13 @@ class TopicosFragment: BaseFragment(), ITopicosRecyclerViewClickListener {
     }
 
     private fun setupUi(){
+        btnNovoTopico.setOnClickListener {
+            val action = TopicosFragmentDirections.actionTopicosFragmentToCadastrarTopicoFragment()
+            findNavController().navigate(action)
+        }
+        btnDigitarCodBarras.setOnClickListener {
 
+        }
     }
 
     override fun onTopicosRecyclerViewItemClickListener(view: View, produto: Topico) {

@@ -40,5 +40,8 @@
     <string name="erro_inserir_usuario">Erro ao inserir Usuário</string>
     <string name="novo_topico">Novo Tópico</string>
     <string name="editar_perfil">Editar Perfil</string>
+    <string name="postar_topico">Postar Tópico</string>
+    <string name="descricao_topico">Descrição do Tópico</string>
+    <string name="nome_topico">Nome do Tópico</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.example.trabalho2progmobile.aplicacao.topicos
+package com.example.trabalho2progmobile.aplicacao.topicos.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,6 +1,7 @@
 package com.example.trabalho2progmobile.utils.mvvm.di
 
 import androidx.room.Room
+import com.example.trabalho2progmobile.aplicacao.cadastrarTopico.CadastrarTopicoViewModel
 import com.example.trabalho2progmobile.aplicacao.cadastro.CadastrarViewModel
 import com.example.trabalho2progmobile.aplicacao.inicial.InicialViewModel
 import com.example.trabalho2progmobile.aplicacao.login.LoginViewModel
@@ -64,4 +65,11 @@ val viewModelModule = module {
             usuarioRepository = get()
         )
     }
+
+    viewModel {
+        CadastrarTopicoViewModel(
+            topicoRepository = get()
+        )
+    }
+
 }

@@ -56,5 +56,13 @@
         <argument
             android:name="usuario"
             app:argType="com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario" />
+        <action
+            android:id="@+id/action_topicosFragment_to_cadastrarTopicoFragment"
+            app:destination="@id/cadastrarTopicoFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/cadastrarTopicoFragment"
+        android:name="com.example.trabalho2progmobile.aplicacao.cadastrarTopico.CadastrarTopicoFragment"
+        android:label="cadastrar_topico_fragment"
+        tools:layout="@layout/cadastrar_topico_fragment" />
 </navigation>
