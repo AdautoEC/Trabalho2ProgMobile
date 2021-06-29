@@ -6,6 +6,9 @@ import com.example.trabalho2progmobile.R
 import com.example.trabalho2progmobile.utils.mvvm.abstracts.base.BaseViewModel
 
 abstract class AbstractDadosDoUsuarioViewModel: BaseViewModel() {
+    val erroNome: LiveData<Int> get() = _erroNome
+    protected val _erroNome by lazy { MutableLiveData<Int>() }
+
     val erroEmail: LiveData<Int> get() = _erroEmail
     protected val _erroEmail by lazy { MutableLiveData<Int>() }
 
@@ -18,7 +21,28 @@ abstract class AbstractDadosDoUsuarioViewModel: BaseViewModel() {
     val dadosCorretos: LiveData<Boolean> get() = _dadosCorretos
     protected val _dadosCorretos by lazy { MutableLiveData<Boolean>() }
 
-    protected fun verificarEmail(email: String): Boolean{
+    fun verificarCampos(
+        nome: String,
+        email: String,
+        senha: String,
+        confirmacaoDeSenha: String
+    ){
+        val verificarNome = verificarNome(nome)
+        val verificarEmail = verificarEmail(email)
+        val verificarSenhas = verificarSenhas(senha, confirmacaoDeSenha)
+
+        _dadosCorretos.value = verificarNome && verificarEmail && verificarSenhas
+    }
+
+    private fun verificarNome(nome: String): Boolean{
+        return if(nome.isNotEmpty()) true
+        else {
+            _erroNome.value = R.string.erro_nome_vazio
+            false
+        }
+    }
+
+    fun verificarEmail(email: String): Boolean{
         return if(email.isNotEmpty()) true
         else {
             _erroEmail.value = R.string.erro_email_vazio
@@ -26,7 +50,7 @@ abstract class AbstractDadosDoUsuarioViewModel: BaseViewModel() {
         }
     }
 
-    protected fun verificarSenhas(senha: String, confirmacaoDeSenha: String): Boolean{
+    private fun verificarSenhas(senha: String, confirmacaoDeSenha: String): Boolean{
         return if(senha.isNotEmpty() && confirmacaoDeSenha.isNotEmpty()) {
             if(senha == confirmacaoDeSenha){
                 true

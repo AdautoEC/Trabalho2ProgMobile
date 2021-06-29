@@ -13,24 +13,8 @@ class CadastrarViewModel(
     val usuarioRepository: IUsuarioRepository
 ): AbstractDadosDoUsuarioViewModel() {
 
-    val erroNome: LiveData<Int> get() = _erroNome
-    private val _erroNome by lazy { MutableLiveData<Int>() }
-
     val usuarioInserido: LiveData<Resultado> get() = _usuarioInserido
     private val _usuarioInserido by lazy { MutableLiveData<Resultado>() }
-
-    fun verificarCampos(
-        nome: String,
-        email: String,
-        senha: String,
-        confirmacaoDeSenha: String
-    ){
-        val verificarNome = verificarNome(nome)
-        val verificarEmail = verificarEmail(email)
-        val verificarSenhas = verificarSenhas(senha, confirmacaoDeSenha)
-
-        _dadosCorretos.value = verificarNome && verificarEmail && verificarSenhas
-    }
 
     fun inserirUsuarioNoBanco(usuario: Usuario) {
         usuario.senha = encriptografarMensagem(usuario.senha)
@@ -39,13 +23,5 @@ class CadastrarViewModel(
             Resultado.ResultadoStatus.FINALIZADO,
             usuarioRepository.inserirUsuario(usuario)
         )
-    }
-
-    private fun verificarNome(nome: String): Boolean{
-        return if(nome.isNotEmpty()) true
-        else {
-            _erroNome.value = R.string.erro_nome_vazio
-            false
-        }
     }
 }

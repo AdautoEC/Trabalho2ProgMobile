@@ -59,10 +59,22 @@
         <action
             android:id="@+id/action_topicosFragment_to_cadastrarTopicoFragment"
             app:destination="@id/cadastrarTopicoFragment" />
+        <action
+            android:id="@+id/action_topicosFragment_to_editarUsuarioFragment"
+            app:destination="@id/editarUsuarioFragment" />
     </fragment>
     <fragment
         android:id="@+id/cadastrarTopicoFragment"
         android:name="com.example.trabalho2progmobile.aplicacao.cadastrarTopico.CadastrarTopicoFragment"
         android:label="cadastrar_topico_fragment"
         tools:layout="@layout/cadastrar_topico_fragment" />
+    <fragment
+        android:id="@+id/editarUsuarioFragment"
+        android:name="com.example.trabalho2progmobile.aplicacao.editarUsuario.EditarUsuarioFragment"
+        android:label="editar_usuario_fragment"
+        tools:layout="@layout/editar_usuario_fragment" >
+        <argument
+            android:name="usuario"
+            app:argType="com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario" />
+    </fragment>
 </navigation>

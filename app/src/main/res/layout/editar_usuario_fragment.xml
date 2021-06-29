@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".aplicacao.cadastro.CadastrarFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".aplicacao.editarUsuario.EditarUsuarioFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -13,23 +13,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="top">
-
+            android:orientation="vertical">
             <include
                 layout="@layout/bloco_dados_usuario"/>
 
             <Button
-                android:id="@+id/btn_cadastrar"
+                android:id="@+id/btn_salvar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="@string/cadastrar"
+                android:text="@string/atualizar"
                 android:textColor="@color/branco"
                 android:background="@drawable/botao_redondo"
                 app:backgroundTint="@color/corPrincipal"
                 android:textStyle="bold"/>
         </LinearLayout>
     </ScrollView>
-
 </FrameLayout>

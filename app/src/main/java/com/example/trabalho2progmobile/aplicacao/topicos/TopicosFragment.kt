@@ -50,7 +50,9 @@ class TopicosFragment: BaseFragment(), ITopicosRecyclerViewClickListener {
             findNavController().navigate(action)
         }
         btnDigitarCodBarras.setOnClickListener {
-
+            val action = TopicosFragmentDirections
+                .actionTopicosFragmentToEditarUsuarioFragment(args.usuario)
+            findNavController().navigate(action)
         }
     }
 
