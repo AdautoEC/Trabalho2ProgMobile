@@ -3,9 +3,16 @@
 
     <!--  Nomes das telas  -->
     <string name="cadastrar">Cadastrar</string>
-    <string name="topicos">Tópicos</string>
     <string name="editarPerfil">EDITAR PERFIL</string>
     <string name="salvarPerfil">SALVAR PERFIL</string>
+
+
+    <!--    Topico -->
+    <string name="nomeTopico">Nome do Tópico</string>
+    <string name="descricaoTopico">Descrição do Tópico</string>
+    <string name="postarTopico">Postar</string>
+    <string name="adicionarTopico">Adicionar tópico</string>
+    <string name="topicos">Tópicos</string>
 
     <!--  Erros EditText  -->
     <string name="erro_nome_vazio">Nome não pode ser vazio</string>
