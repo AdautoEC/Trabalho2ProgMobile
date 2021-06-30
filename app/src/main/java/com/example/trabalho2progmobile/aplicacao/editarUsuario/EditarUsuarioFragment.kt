@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.drawable.toBitmap
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.trabalho2progmobile.R
@@ -74,8 +75,11 @@ class EditarUsuarioFragment: AbstractDadosDoUsuarioFragment() {
                         args.usuario.usuarioId,
                         input_nome_completo.text.toString(),
                         input_email.text.toString(),
-                        input_password.text.toString(),
-                        verificarSeEFotoOuDrawable()
+                        _viewModel.verificarSeSenhaFoiInserida(
+                            input_password.text.toString(),
+                            args.usuario.senha
+                        ),
+                        imgViewFoto.drawable.toBitmap()
                     )
                 )
         }
