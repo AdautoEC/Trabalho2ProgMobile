@@ -9,9 +9,9 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "comentarios")
 data class Comentario(
     @PrimaryKey(autoGenerate = true)
-    val ComentarioId: Int = 0,
+    val comentarioId: Int = 0,
     val text : String,
+    val dataHora: String,
     val usuarioId : Int,
-    val topicoId : Int,
-
+    val topicoId : Int
 ): Parcelable

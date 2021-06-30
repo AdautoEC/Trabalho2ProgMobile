@@ -57,8 +57,8 @@ class TopicosFragment: BaseFragment(), ITopicosRecyclerViewClickListener {
     }
 
     override fun onTopicosRecyclerViewItemClickListener(view: View, topico: Topico) {
-        val action = TopicosFragmentDirections.actionTopicosFragmentToComentariosFragment(topico)
+        val action = TopicosFragmentDirections
+            .actionTopicosFragmentToComentariosFragment(topico, args.usuario)
         findNavController().navigate(action)
     }
-
 }

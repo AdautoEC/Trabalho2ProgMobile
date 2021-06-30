@@ -13,16 +13,4 @@ class TopicosViewModel (val topicoRepository: ITopicoRepository) : BaseViewModel
     fun listarTopicos(): List<Topico> = runBlocking{
         return@runBlocking topicoRepository.buscarTopicos()
     }
-
-    fun inserirTopico() {
-        CoroutineScope(Dispatchers.IO).launch {
-            topicoRepository.inserirTopico(
-                Topico(
-                    nome="nome do topico",
-                    hora = "28/06/2021 16:40",
-                    descricao = "descrição do topico"
-                )
-            )
-        }
-    }
 }

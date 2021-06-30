@@ -3,6 +3,7 @@ package com.example.trabalho2progmobile.aplicacao.login
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.trabalho2progmobile.R
+import com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario
 import com.example.trabalho2progmobile.bancoDeDados.usuario.UsuarioDao
 import com.example.trabalho2progmobile.bancoDeDados.usuario.repository.IUsuarioRepository
 import com.example.trabalho2progmobile.bancoDeDados.usuario.repository.UsuarioRepository
@@ -41,6 +42,12 @@ class LoginViewModel(
             _realizarLogin.value = RealizarLogin(
                 realizar = usuario.senha == encriptografarMensagem(senha),
                 usuario = usuario
+            )
+        }
+        else{
+            _realizarLogin.value = RealizarLogin(
+                realizar = false,
+                usuario = null
             )
         }
     }

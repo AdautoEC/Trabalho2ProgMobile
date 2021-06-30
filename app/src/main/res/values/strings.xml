@@ -13,6 +13,7 @@
     <string name="erro_senha_vazia">Senha não pode ser vazia</string>
     <string name="erro_confirmar_senha">Senhas precisam ser iguais</string>
     <string name="erro_descricao">Descrição não pode ser vazio</string>
+    <string name="erro_comentario">Comentário não pode ser vazio</string>
 
     <!-- Strings de Comando do Dialog -->
     <string name="dialog_mostrar">mostrar</string>
@@ -22,6 +23,7 @@
     <!-- Mensagens do Dialog -->
     <string name="erro_dialog">Erro</string>
     <string name="salvando_usuario">Salvando Usuário no Banco de Dados</string>
+    <string name="salvando_comentario">Salvando Comentário no Banco de Dados</string>
     <string name="salvando_topico">Salvando tópico no banco de dados.</string>
     <string name="retorno">Retorno</string>
     <string name="alerta">Alerta!</string>
@@ -37,6 +39,7 @@
     <string name="pass">Senha</string>
     <string name="confirm_pass">Confirmar senha</string>
     <string name="usuario_inserido">Usuário Inserido com Sucesso!</string>
+    <string name="comentario_inserido">Comentário Inserido com Sucesso!</string>
     <string name="topico_inserido">Tópico inserido com sucesso!</string>
     <string name="usuario_atualizado">Usuário Atualizado com Sucesso!</string>
     <string name="blogtop">blogTop</string>
@@ -47,8 +50,6 @@
     <string name="novo_topico">Novo Tópico</string>
     <string name="editar_perfil">Editar Perfil</string>
     <string name="postar_topico">Postar Tópico</string>
-
-
     <string name="descricao_topico">Descrição do Tópico</string>
     <string name="nome_topico">Nome do Tópico</string>
     <string name="atualizar">Atualizar</string>

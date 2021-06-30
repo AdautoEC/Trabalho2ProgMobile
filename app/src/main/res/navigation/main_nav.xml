@@ -71,5 +71,8 @@
         <argument
             android:name="topico"
             app:argType="com.example.trabalho2progmobile.bancoDeDados.topico.Topico" />
+        <argument
+            android:name="usuario"
+            app:argType="com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario" />
     </fragment>
 </navigation>

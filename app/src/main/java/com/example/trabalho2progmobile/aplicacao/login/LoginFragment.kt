@@ -54,7 +54,7 @@ class LoginFragment: BaseFragment() {
                 )
         }
         _viewModel.realizarLogin.observe(viewLifecycleOwner) {
-            if(it.realizar) navegarParaProximaTela(it.usuario)
+            if(it.realizar) navegarParaProximaTela(it.usuario!!)
             else exibirMensagem(getString(R.string.erro_login))
         }
     }
