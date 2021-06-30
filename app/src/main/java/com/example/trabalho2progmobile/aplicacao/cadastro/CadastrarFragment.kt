@@ -47,16 +47,16 @@ class CadastrarFragment: AbstractDadosDoUsuarioFragment() {
 
     private fun subscribeUi(){
         _viewModel.erroNome.observe(viewLifecycleOwner) {
-            mostrarErroDoMaskEditText(input_nome_completo, it)
+            mostrarErroDoTextInputLayout(textInputLayoutNome, it)
         }
         _viewModel.erroEmail.observe(viewLifecycleOwner) {
-            mostrarErroDoMaskEditText(input_email, it)
+            mostrarErroDoTextInputLayout(textInputLayoutEmailDados, it)
         }
         _viewModel.erroSenha.observe(viewLifecycleOwner) {
-            mostrarErroDoMaskEditText(input_password, it)
+            mostrarErroDoTextInputLayout(textInputLayoutSenhaDados, it)
         }
         _viewModel.erroConfirmarSenha.observe(viewLifecycleOwner) {
-            mostrarErroDoMaskEditText(input_confirm_password, it)
+            mostrarErroDoTextInputLayout(textInputLayoutConfirmarSenhaDados, it)
         }
         _viewModel.dadosCorretos.observe(viewLifecycleOwner) {
             if(it)
