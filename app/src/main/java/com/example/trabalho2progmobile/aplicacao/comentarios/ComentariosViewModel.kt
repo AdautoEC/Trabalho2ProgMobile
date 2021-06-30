@@ -8,7 +8,7 @@ import com.example.trabalho2progmobile.bancoDeDados.comentario.repository.IComen
 import com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario
 import com.example.trabalho2progmobile.bancoDeDados.usuario.repository.IUsuarioRepository
 import com.example.trabalho2progmobile.utils.comentarioComUsuario.ComentarioComUsuario
-import com.example.trabalho2progmobile.utils.retorno.Resultado
+import com.example.trabalho2progmobile.utils.retorno.ResultadoComentario
 import kotlinx.coroutines.runBlocking
 
 class ComentariosViewModel(
@@ -16,18 +16,26 @@ class ComentariosViewModel(
     private val usuarioRepository: IUsuarioRepository
 ): ViewModel() {
 
-    val comentarioInserido: LiveData<Resultado> get() = _comentarioInserido
-    private val _comentarioInserido by lazy { MutableLiveData<Resultado>() }
+    var listaDeComentariosInseridos: MutableList<ComentarioComUsuario> = mutableListOf()
+
+    val comentarioInserido: LiveData<ResultadoComentario> get() = _comentarioInserido
+    private val _comentarioInserido by lazy { MutableLiveData<ResultadoComentario>() }
 
     fun verificarComentario(comentario: String): Boolean{
         return comentario.isNotEmpty()
     }
 
-    fun inserirComentario(comentario: Comentario){
-        _comentarioInserido.value = Resultado(Resultado.ResultadoStatus.CARREGANDO, false)
-        _comentarioInserido.value = Resultado(
-            Resultado.ResultadoStatus.FINALIZADO,
-            comentarioRepository.inserirComentario(comentario)
+    fun inserirComentario(comentario: Comentario, usuario: Usuario){
+        _comentarioInserido.value = ResultadoComentario(
+            ResultadoComentario.ResultadoStatus.CARREGANDO, false, null
+        )
+        _comentarioInserido.value = ResultadoComentario(
+            ResultadoComentario.ResultadoStatus.FINALIZADO,
+            comentarioRepository.inserirComentario(comentario),
+            ComentarioComUsuario(
+                comentario,
+                usuario
+            )
         )
     }
 

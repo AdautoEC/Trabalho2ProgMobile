@@ -9,9 +9,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.trabalho2progmobile.R
 import com.example.trabalho2progmobile.aplicacao.comentarios.adapter.ComentariosAdapter
 import com.example.trabalho2progmobile.bancoDeDados.comentario.Comentario
+import com.example.trabalho2progmobile.utils.comentarioComUsuario.ComentarioComUsuario
 import com.example.trabalho2progmobile.utils.dataHora.DataHora.Companion.gerarDataHora
 import com.example.trabalho2progmobile.utils.mvvm.abstracts.base.BaseFragment
 import com.example.trabalho2progmobile.utils.retorno.Resultado
+import com.example.trabalho2progmobile.utils.retorno.ResultadoComentario
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.comentarios_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -20,6 +22,7 @@ class ComentariosFragment: BaseFragment() {
 
     private val _viewModel: ComentariosViewModel by viewModel()
     private val args: ComentariosFragmentArgs by navArgs()
+    private lateinit var comentariosInseridasAdapter: ComentariosAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,7 +55,8 @@ class ComentariosFragment: BaseFragment() {
                         dataHora = gerarDataHora(),
                         usuarioId = args.usuario.usuarioId,
                         topicoId = args.topico.topicoId
-                    )
+                    ),
+                    args.usuario
                 )
             }
             else{
@@ -66,16 +70,16 @@ class ComentariosFragment: BaseFragment() {
     }
 
     private fun processarResultado(
-        resultado: Resultado
+        resultado: ResultadoComentario
     ){
-        if(resultado.resultadoStatus == Resultado.ResultadoStatus.CARREGANDO){
+        if(resultado.resultadoStatus == ResultadoComentario.ResultadoStatus.CARREGANDO){
             opcoesDialog(R.string.dialog_mostrar, R.string.salvando_comentario)
         }
         else{
             if(resultado.correto){
                 opcoesDialog(R.string.dialog_remover, R.string.salvando_comentario)
                 exibirMensagem(getString(R.string.comentario_inserido))
-//                findNavController().popBackStack()
+                inserirComentarioNaLista(resultado.comentario!!)
             }
             else{
                 opcoesDialog(R.string.dialog_remover, R.string.salvando_comentario)
@@ -87,11 +91,18 @@ class ComentariosFragment: BaseFragment() {
     private fun criarRecylerView(){
         val listaDeComentarios = _viewModel.listarComentarios(args.topico.topicoId)
         val listaDeComentariosComUsuario = _viewModel.integrarUsuariosComComentarios(listaDeComentarios)
+        _viewModel.listaDeComentariosInseridos = listaDeComentariosComUsuario.toMutableList()
         recyclerViewComentarios.also{
+            comentariosInseridasAdapter = ComentariosAdapter(_viewModel.listaDeComentariosInseridos)
             it.layoutManager = GridLayoutManager(requireContext(), 1)
             it.setHasFixedSize(true)
-            it.adapter = ComentariosAdapter(listaDeComentariosComUsuario)
+            it.adapter = comentariosInseridasAdapter
         }
     }
 
+    private fun inserirComentarioNaLista(comentarioComUsuario: ComentarioComUsuario){
+        _viewModel.listaDeComentariosInseridos.add(comentarioComUsuario)
+        val idInserido = _viewModel.listaDeComentariosInseridos.size
+        comentariosInseridasAdapter.notifyItemInserted(idInserido)
+    }
 }
