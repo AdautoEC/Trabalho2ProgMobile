@@ -18,8 +18,12 @@ class EditarUsuarioViewModel(
     val usuario: LiveData<Usuario> get() = _usuario
     private val _usuario by lazy { MutableLiveData<Usuario>() }
 
+    fun verificarSeSenhaFoiInserida(senhaInserida: String, senhaAtual: String): String{
+        return if(senhaInserida.isEmpty()) senhaAtual
+        else Criptografia.encriptografarMensagem(senhaInserida)
+    }
+
     fun atualizarUsuarioNoBanco(usuario: Usuario) {
-        usuario.senha = Criptografia.encriptografarMensagem(usuario.senha)
         _usuarioAtualizado.value = Resultado(Resultado.ResultadoStatus.CARREGANDO, false)
         _usuarioAtualizado.value = Resultado(
             Resultado.ResultadoStatus.FINALIZADO,
@@ -29,5 +33,26 @@ class EditarUsuarioViewModel(
 
     fun buscarUsuario(usuario: Usuario){
         _usuario.value = usuarioRepository.buscarUsuarioPeloEmail(usuario.email)
+    }
+
+    override fun verificarCampos(
+        nome: String,
+        email: String,
+        senha: String,
+        confirmacaoDeSenha: String
+    ){
+        val verificarNome = verificarNome(nome)
+        val verificarEmail = verificarEmail(email)
+        val verificarSenhas = verificacaoDasSenhasParAtualizar(senha, confirmacaoDeSenha)
+
+        _dadosCorretos.value = verificarNome && verificarEmail && verificarSenhas
+    }
+
+    private fun verificacaoDasSenhasParAtualizar(senha: String, confirmacaoDeSenha: String): Boolean{
+        return if(senha.isEmpty() && confirmacaoDeSenha.isEmpty()){
+            true
+        } else{
+            verificarSenhas(senha, confirmacaoDeSenha)
+        }
     }
 }

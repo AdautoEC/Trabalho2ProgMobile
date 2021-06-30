@@ -21,7 +21,7 @@ abstract class AbstractDadosDoUsuarioViewModel: BaseViewModel() {
     val dadosCorretos: LiveData<Boolean> get() = _dadosCorretos
     protected val _dadosCorretos by lazy { MutableLiveData<Boolean>() }
 
-    fun verificarCampos(
+    open fun verificarCampos(
         nome: String,
         email: String,
         senha: String,
@@ -34,7 +34,7 @@ abstract class AbstractDadosDoUsuarioViewModel: BaseViewModel() {
         _dadosCorretos.value = verificarNome && verificarEmail && verificarSenhas
     }
 
-    private fun verificarNome(nome: String): Boolean{
+    protected fun verificarNome(nome: String): Boolean{
         return if(nome.isNotEmpty()) true
         else {
             _erroNome.value = R.string.erro_nome_vazio
@@ -50,7 +50,7 @@ abstract class AbstractDadosDoUsuarioViewModel: BaseViewModel() {
         }
     }
 
-    private fun verificarSenhas(senha: String, confirmacaoDeSenha: String): Boolean{
+    protected fun verificarSenhas(senha: String, confirmacaoDeSenha: String): Boolean{
         return if(senha.isNotEmpty() && confirmacaoDeSenha.isNotEmpty()) {
             if(senha == confirmacaoDeSenha){
                 true
