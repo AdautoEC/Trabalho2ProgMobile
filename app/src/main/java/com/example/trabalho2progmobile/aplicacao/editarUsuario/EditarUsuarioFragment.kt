@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.drawable.toBitmap
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.trabalho2progmobile.R
@@ -56,16 +57,16 @@ class EditarUsuarioFragment: AbstractDadosDoUsuarioFragment() {
     private fun subscribeUi(){
         _viewModel.usuario.observe(viewLifecycleOwner, ::preencherDadosDoUsuario)
         _viewModel.erroNome.observe(viewLifecycleOwner) {
-            mostrarErroDoMaskEditText(input_nome_completo, it)
+            mostrarErroDoTextInputLayout(textInputLayoutNome, it)
         }
         _viewModel.erroEmail.observe(viewLifecycleOwner) {
-            mostrarErroDoMaskEditText(input_email, it)
+            mostrarErroDoTextInputLayout(textInputLayoutEmailDados, it)
         }
         _viewModel.erroSenha.observe(viewLifecycleOwner) {
-            mostrarErroDoMaskEditText(input_password, it)
+            mostrarErroDoTextInputLayout(textInputLayoutSenhaDados, it)
         }
         _viewModel.erroConfirmarSenha.observe(viewLifecycleOwner) {
-            mostrarErroDoMaskEditText(input_confirm_password, it)
+            mostrarErroDoTextInputLayout(textInputLayoutConfirmarSenhaDados, it)
         }
         _viewModel.dadosCorretos.observe(viewLifecycleOwner) {
             if(it)
@@ -74,8 +75,11 @@ class EditarUsuarioFragment: AbstractDadosDoUsuarioFragment() {
                         args.usuario.usuarioId,
                         input_nome_completo.text.toString(),
                         input_email.text.toString(),
-                        input_password.text.toString(),
-                        verificarSeEFotoOuDrawable()
+                        _viewModel.verificarSeSenhaFoiInserida(
+                            input_password.text.toString(),
+                            args.usuario.senha
+                        ),
+                        imgViewFoto.drawable.toBitmap()
                     )
                 )
         }

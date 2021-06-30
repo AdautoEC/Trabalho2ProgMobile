@@ -41,10 +41,10 @@ class LoginFragment: BaseFragment() {
 
     private fun subscribeUi(){
         _viewModel.erroEmail.observe(viewLifecycleOwner) {
-            mostrarErroDoMaskEditText(input_email_login, it)
+            mostrarErroDoTextInputLayout(textInputLayoutEmail, it)
         }
         _viewModel.erroSenha.observe(viewLifecycleOwner) {
-            mostrarErroDoMaskEditText(input_password_login, it)
+            mostrarErroDoTextInputLayout(textInputLayoutSenha, it)
         }
         _viewModel.dadosCorretos.observe(viewLifecycleOwner) {
             if(it)
@@ -54,7 +54,7 @@ class LoginFragment: BaseFragment() {
                 )
         }
         _viewModel.realizarLogin.observe(viewLifecycleOwner) {
-            if(it.realizar) navegarParaProximaTela(it.usuario)
+            if(it.realizar) navegarParaProximaTela(it.usuario!!)
             else exibirMensagem(getString(R.string.erro_login))
         }
     }

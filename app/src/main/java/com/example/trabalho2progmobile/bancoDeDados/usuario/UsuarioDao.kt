@@ -13,6 +13,9 @@ interface UsuarioDao {
     @Query("SELECT * FROM usuario WHERE email == :email")
     suspend fun getUsuarioByEmail(email: String): Usuario
 
+    @Query("SELECT * FROM usuario WHERE usuarioId == :usuarioId")
+    suspend fun getUsuarioById(usuarioId: Int): Usuario
+
     @Update
     suspend fun updateUsuario(usuario: Usuario)
 

@@ -25,6 +25,10 @@ class UsuarioRepository(
         return@runBlocking usuarioDao.getUsuarioByEmail(email)
     }
 
+    override fun buscarUsuarioPeloId(usuarioId: Int): Usuario = runBlocking{
+        return@runBlocking usuarioDao.getUsuarioById(usuarioId)
+    }
+
     override fun atualizarUsuario(usuario: Usuario): Boolean = runBlocking{
         return@runBlocking try {
             usuarioDao.updateUsuario(usuario)

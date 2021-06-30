@@ -6,6 +6,7 @@ interface IUsuarioRepository {
     fun inserirUsuario(usuario: Usuario): Boolean
     fun buscarUsuarios(): List<Usuario>
     fun buscarUsuarioPeloEmail(email: String): Usuario
+    fun buscarUsuarioPeloId(usuarioId: Int): Usuario
     fun atualizarUsuario(usuario: Usuario): Boolean
     fun deletarUsuario(usuario: Usuario): Boolean
 }
