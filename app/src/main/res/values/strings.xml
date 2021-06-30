@@ -52,5 +52,7 @@
     <string name="descricao_topico">Descrição do Tópico</string>
     <string name="nome_topico">Nome do Tópico</string>
     <string name="atualizar">Atualizar</string>
+    <string name="comentarios">Comentários</string>
+    <string name="postar">Postar</string>
 
 </resources>

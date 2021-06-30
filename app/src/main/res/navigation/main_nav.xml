@@ -45,6 +45,9 @@
         <action
             android:id="@+id/action_topicosFragment_to_editarUsuarioFragment"
             app:destination="@id/editarUsuarioFragment" />
+        <action
+            android:id="@+id/action_topicosFragment_to_comentariosFragment"
+            app:destination="@id/comentariosFragment" />
     </fragment>
     <fragment
         android:id="@+id/cadastrarTopicoFragment"
@@ -59,5 +62,14 @@
         <argument
             android:name="usuario"
             app:argType="com.example.trabalho2progmobile.bancoDeDados.usuario.Usuario" />
+    </fragment>
+    <fragment
+        android:id="@+id/comentariosFragment"
+        android:name="com.example.trabalho2progmobile.aplicacao.comentarios.ComentariosFragment"
+        android:label="comentarios_fragment"
+        tools:layout="@layout/comentarios_fragment" >
+        <argument
+            android:name="topico"
+            app:argType="com.example.trabalho2progmobile.bancoDeDados.topico.Topico" />
     </fragment>
 </navigation>
