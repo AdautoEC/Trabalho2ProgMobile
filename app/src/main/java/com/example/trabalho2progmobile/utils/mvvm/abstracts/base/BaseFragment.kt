@@ -6,6 +6,7 @@ import com.example.trabalho2progmobile.R
 import com.example.trabalho2progmobile.utils.dialog.LoadingDialog
 import com.example.trabalho2progmobile.utils.mensagens.MensagemUtils.Companion.mostrarMensagem
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -48,5 +49,9 @@ abstract class BaseFragment: Fragment() {
 
     protected fun mostrarErroDoMaskEditText(editText: TextInputEditText, erro: Int){
         editText.error = getString(erro)
+    }
+
+    protected fun mostrarErroDoTextInputLayout(textInputLayout: TextInputLayout, erro: Int){
+        textInputLayout.error = getString(erro)
     }
 }
