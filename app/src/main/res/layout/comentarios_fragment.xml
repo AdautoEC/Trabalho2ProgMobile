@@ -80,6 +80,7 @@
                     android:layout_height="wrap_content"
                     android:maxLines="3"
                     android:ellipsize="end"
+
                     android:backgroundTint="@color/branco"
                     android:fitsSystemWindows="true"
                     android:hint="@string/esreva_um_comentario"
@@ -90,10 +91,14 @@
             <Button
                 android:id="@+id/btn_postar_comentario"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:layout_margin="5dp"
-                android:text="@string/postar" />
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="0dp"
+                android:layout_gravity="bottom"
+                app:backgroundTint="@color/corPrincipal"
+                android:text="@string/postar"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 

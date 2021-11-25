@@ -14,6 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+
             android:gravity="top">
 
             <include
@@ -23,7 +24,7 @@
                 android:id="@+id/btn_cadastrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_margin="30dp"
                 android:text="@string/cadastrar"
                 android:textColor="@color/branco"
                 android:background="@drawable/botao_redondo"

@@ -42,19 +42,19 @@
     <string name="comentario_inserido">Comentário Inserido com Sucesso!</string>
     <string name="topico_inserido">Tópico inserido com sucesso!</string>
     <string name="usuario_atualizado">Usuário Atualizado com Sucesso!</string>
-    <string name="blogtop">blogTop</string>
+    <string name="tititi">TiTiTi \nBlog</string>
     <string name="erro_login">Email e/ou senha incorretos</string>
     <string name="erro_inserir_usuario">Erro ao inserir Usuário</string>
     <string name="erro_inserir_topico">Erro ao inserir tópico.</string>
     <string name="erro_atualizar_usuario">Erro ao Atualizar Usuário</string>
     <string name="novo_topico">Novo Tópico</string>
     <string name="editar_perfil">Editar Perfil</string>
-    <string name="postar_topico">Postar Tópico</string>
-    <string name="descricao_topico">Descrição do Tópico</string>
-    <string name="nome_topico">Nome do Tópico</string>
+    <string name="postar_topico">Postar</string>
+    <string name="descricao_topico">Descrição</string>
+    <string name="nome_topico">Nome</string>
     <string name="atualizar">Atualizar</string>
     <string name="comentarios">Comentários</string>
     <string name="postar">Postar</string>
-    <string name="esreva_um_comentario">Esreva um comentario</string>
+    <string name="esreva_um_comentario">Algo para comentar...</string>
 
 </resources>

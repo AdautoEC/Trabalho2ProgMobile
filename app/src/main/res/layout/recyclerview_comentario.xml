@@ -61,6 +61,10 @@
                 android:text="@{comentario.comentario.text}"
                 android:textSize="14sp"
                 android:textColor="@color/corPrincipal" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/corPrincipal"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
